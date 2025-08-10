@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur - TODO List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .error-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-tasks me-2"></i>TODO List App
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/"><i class="fas fa-home me-1"></i>Accueil</a>
+                <a class="nav-link" href="/tasks"><i class="fas fa-list me-1"></i>Tâches</a>
+                <a class="nav-link" href="/users"><i class="fas fa-users me-1"></i>Utilisateurs</a>
+                <a class="nav-link" href="/h2-console" target="_blank"><i class="fas fa-database me-1"></i>Base de données</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="error-section">
+        <div class="container text-center">
+            <i class="fas fa-exclamation-triangle fa-5x mb-4"></i>
+            <h1 class="display-4 mb-4">Oups ! Une erreur s'est produite</h1>
+            <p class="lead mb-4" th:text="${error}">Une erreur s'est produite</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <a href="/" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-home me-2"></i>Retour à l'accueil
+                    </a>
+                    <a href="javascript:history.back()" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-arrow-left me-2"></i>Retour en arrière
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">
+                            <i class="fas fa-info-circle me-2"></i>Que s'est-il passé ?
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p>erreur</p>
+                        <div class="text-center mt-4">
+                            <div class="btn-group" role="group">
+                                <a href="/" class="btn btn-primary">
+                                    <i class="fas fa-home me-2"></i>Accueil
+                                </a>
+                                <a href="/tasks" class="btn btn-outline-primary">
+                                    <i class="fas fa-list me-2"></i>Tâches
+                                </a>
+                                <a href="/users" class="btn btn-outline-success">
+                                    <i class="fas fa-users me-2"></i>Utilisateurs
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">
+                <i class="fas fa-code me-1"></i>Application TODO List - Spring Boot
+                <span class="ms-3">
+                    <i class="fas fa-database me-1"></i>H2 Database
+                    <span class="ms-3">
+                        <i class="fas fa-leaf me-1"></i>Thymeleaf
+                    </span>
+                </span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
